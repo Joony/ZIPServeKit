@@ -1,0 +1,8 @@
+// Release.xcconfig
+#include "Base.xcconfig"
+
+// Release bundle identifier (no suffix)
+PRODUCT_BUNDLE_IDENTIFIER = $(PRODUCT_BUNDLE_IDENTIFIER_PREFIX).ZIPServeKitExample
+
+// Release optimizations
+SWIFT_OPTIMIZATION_LEVEL = -O

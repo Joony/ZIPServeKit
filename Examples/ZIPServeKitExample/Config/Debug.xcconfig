@@ -1,0 +1,9 @@
+// Debug.xcconfig
+#include "Base.xcconfig"
+
+// Debug-specific bundle identifier
+PRODUCT_BUNDLE_IDENTIFIER = $(PRODUCT_BUNDLE_IDENTIFIER_PREFIX).ZIPServeKitExample.debug
+
+// Debug optimizations
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG

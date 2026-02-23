@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZIPServeKit Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 ZIPServeKit Demo</h1>
+            <p class="subtitle">Serving content from a ZIP file via custom URL protocol</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>✅ It Works!</h2>
+                <p>If you're seeing this page, the custom protocol is working correctly!</p>
+                <p>This HTML file is being served from a ZIP archive using a custom URL scheme.</p>
+            </section>
+
+            <section class="card">
+                <h3>🔗 Navigation Test</h3>
+                <p>Click the link below to test navigation within the ZIP archive:</p>
+                <a href="about.html" class="button">Go to About Page</a>
+            </section>
+
+            <section class="card">
+                <h3>🎨 CSS Test</h3>
+                <p>This page is styled with an external CSS file (<code>styles.css</code>) served from the ZIP.</p>
+                <div class="color-boxes">
+                    <div class="box box-red"></div>
+                    <div class="box box-green"></div>
+                    <div class="box box-blue"></div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>📜 JavaScript Test</h3>
+                <p>Click the button to test JavaScript execution:</p>
+                <button id="jsTest" class="button">Run JavaScript Test</button>
+                <p id="jsResult" class="result"></p>
+            </section>
+
+            <section class="card">
+                <h3>🖼️ Image Test</h3>
+                <p>Testing image loading (if included in ZIP):</p>
+                <div class="image-placeholder">
+                    <p>📷 Image would appear here</p>
+                    <p class="small">Add an image to the ZIP to test image serving</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>📊 Technical Details</h3>
+                <dl class="details">
+                    <dt>Protocol:</dt>
+                    <dd id="protocol"></dd>
+                    
+                    <dt>Host:</dt>
+                    <dd id="host"></dd>
+                    
+                    <dt>Path:</dt>
+                    <dd id="path"></dd>
+                    
+                    <dt>Full URL:</dt>
+                    <dd id="url"></dd>
+                    
+                    <dt>User Agent:</dt>
+                    <dd id="userAgent"></dd>
+                </dl>
+            </section>
+
+            <section class="card">
+                <h3>🧪 Fetch API Test</h3>
+                <p>Testing if we can fetch other files from the ZIP:</p>
+                <button id="fetchTest" class="button">Fetch about.html</button>
+                <pre id="fetchResult" class="code-block"></pre>
+            </section>
+        </main>
+
+        <footer>
+            <p>ZIPServeKit Example • <span id="timestamp"></span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

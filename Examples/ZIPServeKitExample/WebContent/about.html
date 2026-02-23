@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ZIPServeKit Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 About This Demo</h1>
+            <p class="subtitle">Learn more about ZIPServeKit</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Navigation Success! 🎉</h2>
+                <p>You successfully navigated to a different page within the ZIP archive!</p>
+                <a href="index.html" class="button">← Back to Home</a>
+            </section>
+
+            <section class="card">
+                <h3>What is ZIPServeKit?</h3>
+                <p>ZIPServeKit is a Swift Package that allows you to serve content from ZIP archives using custom URL protocols in WKWebView.</p>
+                
+                <h4>Key Features:</h4>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Serve any content from ZIP files</li>
+                    <li>Custom URL schemes (like this demo!)</li>
+                    <li>Automatic MIME type detection</li>
+                    <li>Support for navigation between pages</li>
+                    <li>JavaScript and CSS support</li>
+                    <li>Works with SwiftUI and UIKit</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h3>Use Cases</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>📚 Bundle documentation with your app</li>
+                    <li>🎮 Distribute HTML5 games</li>
+                    <li>📱 Ship offline web apps</li>
+                    <li>📖 Create interactive ebooks</li>
+                    <li>🎨 Package design portfolios</li>
+                    <li>🔒 Serve content without internet access</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h3>Technical Info</h3>
+                <p><strong>Current URL:</strong> <code id="currentUrl"></code></p>
+                <p><strong>Referrer:</strong> <code id="referrer"></code></p>
+                <p><strong>Protocol:</strong> <code id="protocol"></code></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>ZIPServeKit Example</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('currentUrl').textContent = window.location.href;
+        document.getElementById('referrer').textContent = document.referrer || '(none)';
+        document.getElementById('protocol').textContent = window.location.protocol;
+    </script>
+</body>
+</html>
