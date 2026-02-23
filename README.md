@@ -20,7 +20,7 @@ Add this to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/joony/ZIPServeKit.git", from: "1.0.0")
+    .package(url: "https://github.com/Joony/ZIPServeKit.git", from: "1.0.0")
 ]
 ```
 
@@ -34,28 +34,28 @@ Or in Xcode: File → Add Packages → Enter repository URL
 import ZIPServeKit
 
 // 1. Create configuration
-let config = CustomProtocolConfiguration(
+let config = ZIPServeKitConfiguration(
     schemeName: "myapp",
     zipFileURL: Bundle.main.url(forResource: "content", withExtension: "zip")!
 )
 
 // 2. Setup the service
-try CustomProtocolService.shared.setup(configuration: config)
+try ZIPServeKitService.shared.setup(configuration: config)
 
 // 3. Create WebView
-let webView = CustomProtocolService.shared.createWebView(frame: view.bounds)
+let webView = ZIPServeKitService.shared.createWebView(frame: view.bounds)
 view.addSubview(webView)
 
 // 4. Load content
-CustomProtocolService.shared.loadIndex() // Loads index.html
+ZIPServeKitService.shared.loadIndex() // Loads index.html
 // Or load specific file:
-CustomProtocolService.shared.loadFile("page.html")
+ZIPServeKitService.shared.loadFile("page.html")
 ```
 
 ### Advanced Configuration
 
 ```swift
-let config = CustomProtocolConfiguration(
+let config = ZIPServeKitConfiguration(
     schemeName: "docs",
     zipFileURL: zipURL,
     indexFileName: "home.html",
@@ -72,7 +72,7 @@ let config = CustomProtocolConfiguration(
 Override MIME types for specific file extensions:
     
 ```swift
-let config = CustomProtocolConfiguration(
+let config = ZIPServeKitConfiguration(
     schemeName: "myapp",
     zipFileURL: zipURL,
     mimeTypeOverrides: [
@@ -110,7 +110,7 @@ Here's how someone would use your package:
 
 ```swift
 import UIKit
-import CustomProtocolKit
+import ZIPServeKit
 
 class ViewController: UIViewController {
     
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
             fatalError("ZIP file not found")
         }
         
-        let config = CustomProtocolConfiguration(
+        let config = ZIPServeKitConfiguration(
             schemeName: "webapp",
             zipFileURL: zipURL,
             indexFileName: "index.html",
@@ -131,15 +131,15 @@ class ViewController: UIViewController {
         )
         
         do {
-            try CustomProtocolService.shared.setup(configuration: config)
+            try ZIPServeKitService.shared.setup(configuration: config)
             
             // Create and add WebView
-            let webView = CustomProtocolService.shared.createWebView(frame: view.bounds)
+            let webView = ZIPServeKitService.shared.createWebView(frame: view.bounds)
             webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             view.addSubview(webView)
             
             // Load the content
-            CustomProtocolService.shared.loadIndex()
+            ZIPServeKitService.shared.loadIndex()
             
         } catch {
             print("Failed to setup: \(error)")
